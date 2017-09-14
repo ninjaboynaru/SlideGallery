@@ -1,0 +1,22 @@
+
+
+
+
+
+
+
+.js-slide-gallery {
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+    
+    white-space:nowrap;
+}
+.js-slide-content {
+    display:inline-block;
+    transition: transform 0.5s linear;
+    z-index:1;
+}
+.js-slide-arrow {
+    z-index:2;
+}

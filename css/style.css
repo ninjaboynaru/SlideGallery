@@ -1,0 +1,169 @@
+
+/*
+* Uses BEM (Block__Element--Modifier) style for naming
+
+* MOBILE FIRST
+*/
+
+/*
+* BASE
+*/
+html, body {
+    height:auto;
+    min-height:100%;
+}
+body {
+	margin: 0;
+	padding: 0 0 112px 0;
+
+	background-color: #dedede;
+	font-family: 'Raleway', sans-serif;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+.clearfix:after {
+    content:' ';
+    display:block;
+    clear:both;
+}
+
+* {
+    box-sizing:border-box;
+}
+
+
+/*
+* LAYOUT
+*/
+.header {
+    padding:24px;
+}
+.header__credits--left, .header__credits--right {
+    width:50%;
+}
+.header__credits--left {
+    float:left;
+    text-align:left;
+}
+.header__credits--right {
+    float:right;
+    text-align:right;
+}
+
+
+/*
+* MODULE
+*/
+.title-bar {
+    text-align:center;
+    margin-bottom:12px;
+}
+.title-bar__title {
+    font-size:2em;
+    text-align:center;
+}
+
+
+.credits {
+	font-weight: bold;
+	font-style: italic;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.credits--link {
+	color: #5FCF80;
+	text-shadow: 1px 1px 3px black;
+}
+.credits--link:hover, .credits--link:active {
+	display:inline-block;
+	transform: scale(1.1);
+}
+.credits--image {
+	position: absolute;
+	left: 12px;
+	bottom: 12px;
+}
+
+
+.gallery-wrapper {
+	position: relative;
+    margin: auto;
+	width: 80%;
+	height: 400px;
+}
+
+.gallery {
+    width:100%;
+    height:100%;
+}
+.gallery__content {
+    width:100%;
+    height:100%;
+    background-color:#DEDEDE;
+}
+.gallery__content__img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	max-height: 100%;
+}
+
+.gallery-arrow {
+	position: absolute;
+	bottom: 50%;
+	font-size: 2em;
+	color: black;
+	text-shadow: 0 0 5px white;
+}
+.gallery-arrow--left {
+    left:0;
+}
+.gallery-arrow--right {
+    right:0;
+}
+
+.gallery__loading-placeholder {
+    font-size:5vw;
+    font-family:'Baloo Tammudu', sans-serif;
+}
+
+
+.btn {
+	border: none;
+	font-size: 1em;
+	padding: 6px;
+	font-family: 'Raleway';
+	border-radius: 12px;
+}
+.btn:hover, .btn:active {
+    cursor:pointer;
+    transform:scale(1.1);
+}
+.btn--main {
+	background-color: white;
+	font-weight: bold;
+	box-shadow: 0px 0px 10px 0px black;
+}
+
+
+
+
+/*
+* QUERIES
+*/
+@media (max-width:460px) {
+    .header__credits--left, .header__credits--right {
+        float:none;
+        width:auto;
+        display:block;
+        text-align:left;
+        margin:12px 0;
+    }
+}
+
+
+
+

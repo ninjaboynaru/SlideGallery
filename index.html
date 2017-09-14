@@ -1,0 +1,72 @@
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        
+        <link rel='stylesheet' href='css/style.css'>
+        <link rel='stylesheet' href='css/fontello.css'>
+        <link rel='stylesheet' href='css/slideGallery.css'>
+        
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu|Josefin+Sans:400,700|Raleway:400,700" rel="stylesheet"> 
+        
+        <script src='js/slideGallery.js'></script>
+        <script src='js/handlebars.js'></script>
+        <script src='js/app.js'></script>
+    </head>
+    
+    
+    <body>
+        <header class='header clearfix'>
+            <span class='credits header__credits--left'>Slide Gallery Code and Design: 
+                <a class='credits credits--link' href=''>Thiago HPC</a>
+            </span>
+            <span class='credits header__credits--right' href=''>Quality Photo API: 
+                <a class='credits credits--link' href='https://unsplash.com/'>Unsplash <i class='icon-camera'></i></a>
+            </span>
+        </header>
+        
+        <div class='title-bar'>
+            <p class='title-bar__title'>JavaScript Photo Slide Gallery</p>
+            <button class='btn btn--main' onclick='GalleryApp.LoadNewImages(20)'>New Images <i class='icon-arrows-cw'></i></button>
+        </div>
+        
+        <div class='gallery-wrapper'>
+            <i class='gallery-arrow gallery-arrow--left icon-left-open js-slide-arrow' data-slide-direction=-1></i>
+            
+            <div id='js-gallery' class='gallery js-slide-gallery'>
+                
+                <p class='gallery__loading-placeholder'>
+                    Loading...
+                </p>
+<!--                <div class='gallery__content js-slide-content'>
+                    <img class='gallery__content__img' src='images/warm_painted_girl-luke-braswell.jpg'>
+                    <a class='credits credits--link credits--image' href=''>Luke Braswell</a>
+                </div>
+                
+                <div class='gallery__content js-slide-content'>
+                    <img class='gallery__content__img' src='images/snow_deer-teddy-kelley.jpg'>
+                    <span class='credits credits--link credits--image' href=''>Teddy Kelly</span>
+                </div>
+
+                <div class='gallery__content js-slide-content'>
+                    <img class='gallery__content__img' src='images/monkeys-matthew-kane.jpg'>
+                    <span class='credits credits--link credits--image' href=''>Mathew Kane</span>
+                </div>
+
+                <div class='gallery__content js-slide-content'>
+                    <img class='gallery__content__img' src='images/neon_city-denys-nevozhai.jpg'>
+                    <span class='credits credits--link credits--image' href=''>Denys Nevozhai</span>
+                </div>-->
+                
+            </div>
+            
+            <i class='gallery-arrow gallery-arrow--right icon-right-open js-slide-arrow' data-slide-direction=1></i>
+        </div>
+    
+    </body>
+
+
+
+
+</html>
