@@ -162,6 +162,10 @@ a {
         text-align:left;
         margin:12px 0;
     }
+	
+	.credits--image {
+		font-size:0.6em;
+	}
 }
 
 
