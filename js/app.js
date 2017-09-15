@@ -108,6 +108,9 @@ var GalleryApp = (function() {
     function PopulateGallery(unsplashData)
     {
         Gallery.ClearGallery();
+		
+		let utmParameters = '?utm_source=slidegallery&utm_medium=referral&utm_campaign=api-credit';
+		
         unsplashData.forEach(function(entry, index) {
             let imgURL = entry.urls.custom;
             let authorURL = entry.user.links.html;
@@ -116,7 +119,7 @@ var GalleryApp = (function() {
             let resetGallery = false;
             if(index == unsplashData.length-1){ resetGallery = true }
             
-            Gallery.NewEntry(imgURL, authorURL, authorName, resetGallery);
+            Gallery.NewEntry(imgURL, authorURL+utmParameters, authorName, resetGallery);
         });
     }
 
