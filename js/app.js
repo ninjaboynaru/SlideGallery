@@ -1,36 +1,17 @@
-
-
-
 /*
 *
 * REQUIREMENTS
 * - JavaScript Library and dependencies 'slideGallery.js'
 * - JavaScript Library 'handlebars.js'
-*
-* DOM REQUIREMENTS
-* - Element with id 'js-gallery'
-*
-* CSS Classes
-* - The following CSS classes are used to create each slide of the gallery
-* - CSS Class 'gallery__content'
-* - CSS Class 'gallery__content__img'
-* - CSS Class 'credits'
-* - CSS Class 'credits--link'
-* - CSS Class 'credits--image'
-* -
-*
-*
-* NOTE
-* - Element with id 'js-slide-gallery' is 'gallery' for slideGallery.js
 * -
 */
 
-        let entryLayout = "<div class='gallery__content js-slide-content'>";
-        entryLayout += "<img class='gallery__content__img' src='{{imgURL}}'>";
-        entryLayout += "<a class='credits credits--link credits--image' href='{{authorURL}}'>"
-        entryLayout += "Photographer {{authorName}}";
-        entryLayout += "</a>"
-        entryLayout += "</div>";
+let entryLayout = "<div class='gallery__content js-slide-content'>";
+entryLayout += "<img class='gallery__content__img' src='{{imgURL}}'>";
+entryLayout += "<a class='credits credits--link credits--image' href='{{authorURL}}'>"
+entryLayout += "Photographer {{authorName}}";
+entryLayout += "</a>"
+entryLayout += "</div>";
 
 /**
 * Main module of the website
@@ -112,7 +93,7 @@ var GalleryApp = (function() {
 		let utmParameters = '?utm_source=slidegallery&utm_medium=referral&utm_campaign=api-credit';
 		console.log(unsplashData);
         unsplashData.forEach(function(entry, index) {
-            let imgURL = entry.urls.custom;
+            let imgURL = entry.urls.full;
             let authorURL = entry.user.links.html;
             let authorName = entry.user.first_name + ' ' + entry.user.last_name;
 
