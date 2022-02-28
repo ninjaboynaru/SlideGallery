@@ -17,7 +17,7 @@
 * - CSS Class 'credits'
 * - CSS Class 'credits--link'
 * - CSS Class 'credits--image'
-* - 
+* -
 *
 *
 * NOTE
@@ -37,13 +37,13 @@
 * @module
 */
 var GalleryApp = (function() {
-    
+
     var requestInProgress = false;
-    
-    
+
+
     /**
     * Loads new images into the gallery on the website.
-    * Sends an xhr request to the unsplash photo api for random photos, requesting photos that 
+    * Sends an xhr request to the unsplash photo api for random photos, requesting photos that
     * are the size of the gallery.
     *
     * @function
@@ -52,13 +52,13 @@ var GalleryApp = (function() {
     function LoadNewImages(count = 10)
     {
         if(requestInProgress == true){return}
-        
+
         let appID = 'fa50f60f26758ca6aa4c1abc0684aea5710ae8c7bd1a3bf0dc64122484a34557';
         let apiURL = 'https://api.unsplash.com/';
         let apiVersion = 'v1';
 
         let idealImgSize = Gallery.GallerySize();
-        
+
         apiURL += 'photos/random';
         apiURL += '?';
         apiURL += 'count=' + count + '&';
@@ -72,7 +72,7 @@ var GalleryApp = (function() {
         xhr.setRequestHeader('Authorization', 'Client-ID ' + appID);
         xhr.onreadystatechange = RequestCallback;
         xhr.send();
-        
+
         requestInProgress = true;
 
         function RequestCallback()
@@ -95,9 +95,9 @@ var GalleryApp = (function() {
             }
         }
     }
-    
 
-    
+
+
     /**
     * Creates gallery entries for each item in an Unsplash api response
     *
@@ -108,9 +108,9 @@ var GalleryApp = (function() {
     function PopulateGallery(unsplashData)
     {
         Gallery.ClearGallery();
-		
+
 		let utmParameters = '?utm_source=slidegallery&utm_medium=referral&utm_campaign=api-credit';
-		
+		console.log(unsplashData);
         unsplashData.forEach(function(entry, index) {
             let imgURL = entry.urls.custom;
             let authorURL = entry.user.links.html;
@@ -118,7 +118,7 @@ var GalleryApp = (function() {
 
             let resetGallery = false;
             if(index == unsplashData.length-1){ resetGallery = true }
-            
+
             Gallery.NewEntry(imgURL, authorURL+utmParameters, authorName, resetGallery);
         });
     }
@@ -142,18 +142,18 @@ var GalleryApp = (function() {
         entryLayout += "Photographer {{authorName}}";
         entryLayout += "</a>"
         entryLayout += "</div>";
-        
+
         let entryTemplate = Handlebars.compile(entryLayout);
         let temporaryDiv = document.createElement('div');
-        
-        
+
+
         if(galleryElement == undefined)
         {
             document.addEventListener('DOMContentLoaded', function Init(){
                 galleryElement = document.getElementById(galleryID);
             });
         }
-        
+
         /**
         * Removes all entries from the gallery
         * @function
@@ -165,7 +165,7 @@ var GalleryApp = (function() {
                 galleryElement.removeChild(galleryElement.lastChild);
             }
         }
-        
+
         /**
         * Adds a new entry to the gallery
         *
@@ -183,13 +183,13 @@ var GalleryApp = (function() {
             temporaryDiv.innerHTML = entryHTML;
             galleryElement.appendChild(temporaryDiv.firstChild);
             temporaryDiv.innerHTML = '';
-            
+
             if(resetGallery == true)
             {
                 SlideGallery.ResetGallery(galleryElement);
             }
         }
-        
+
         /**
         * Returns the size of the gallery element.
         * WARNING: size does not include padding.
@@ -202,14 +202,14 @@ var GalleryApp = (function() {
             let size = {x:-1, y:-1}
             size.x = galleryElement.clientWidth;
             size.y = galleryElement.clientHeight;
-            
+
             return size;
         }
 
-        
+
         let module = {ClearGallery:ClearGallery, NewEntry:NewEntry, GallerySize: GallerySize};
         return module;
-    }() );    
+    }() );
 
 
 
@@ -219,8 +219,3 @@ var GalleryApp = (function() {
 
 
 window.addEventListener('load', ()=>{GalleryApp.LoadNewImages(10)} );
-
-
-
-
-
