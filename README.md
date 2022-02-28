@@ -1,6 +1,6 @@
 # SlideGallery
 Sliding image gallery, showcasing quality images from Unsplash.  
-![Check It Out Here](https://ninjaboynaru.github.io/SlideGallery/)
+[Check It Out Here](https://ninjaboynaru.github.io/SlideGallery/)
 
 ![Snapshot 1 Large](https://raw.githubusercontent.com/ninjaboynaru/SlideGallery/master/snapshots/snapshot_1.PNG)
 
